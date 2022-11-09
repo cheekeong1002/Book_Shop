@@ -29,13 +29,20 @@ unset($_SESSION['isbn']);
     $_SESSION['search'] = $_GET['search'];
     //include "searchBook.php";
     include "displayStockAdmin.php";
-  }
-
-  if (isset($_GET['action']) == "delete") { ?>
-    <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin:10px;">
-      <strong>Success!</strong> Book is deleted successfully!
-    </div>
+  }?>
   <?php
+  if (isset($_GET['action'])){
+    if ($_GET['action'] == "delete"){?>
+      
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin:10px;">
+          <strong>Success!</strong> Book is deleted successfully!
+        </div><?php
+    }elseif($_GET['action'] == "added"){?>
+      
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin:10px;">
+          <strong>Success!</strong> Book is added successfully!
+        </div><?php
+    }
   }
   ?>
 </head>
@@ -47,8 +54,8 @@ unset($_SESSION['isbn']);
       <div class="left">
         <form action="" class="searchbar" method="get" style="margin-top:auto; margin-bottom:auto;">
           <input type="text" name="search" style="margin-top:auto; margin-bottom:auto;" placeholder="Search something..." value="<?php if (isset($_SESSION['search'])) {
-                                                                                                                                    echo $_SESSION['search'];
-                                                                                                                                  } ?>">
+                                                                                      echo $_SESSION['search'];
+                                                                                    } ?>">
           <button type="submit"><i class="fa fa-search" aria-hidden="true"></i>
             <input type="hidden" name="submitted" value="true">
         </form>

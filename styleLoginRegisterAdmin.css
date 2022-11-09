@@ -1,0 +1,40 @@
+.container{
+    width: 100%;
+}
+
+.inner-container{
+    width: 50%;
+    margin: auto;
+}
+
+.login-form{
+    width: 50%;
+    margin: auto;
+    padding: 50px 25px 50px 25px;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    box-shadow: #24252A 0px 5px 15px;
+}
+
+.register-form{
+    margin: auto;
+    padding: 25px;
+    border: 1px solid #808080;
+    border-radius: 10px;
+    box-shadow: #24252A 0px 5px 15px;
+}
+
+@media only screen and (min-width :1500px) {
+    html, body{
+        max-height: 100%;
+    }
+
+
+}
+
+@media only screen and (min-width :1900px) {
+    .inner-container{
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+}

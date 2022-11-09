@@ -83,7 +83,9 @@
 					<input type="date" name="publicationDate" value="<?php if(isset($publicationDate)){echo $publicationDate;}?>" max="<?php echo date("Y-m-d"); ?>" required></br>
 
 					<label>ISBN-13 number:</label></br>
+
 					<input type="text" name="isbn" pattern="[0-9\-]+[0-9]$" title="Alphabet and special character are not accepted" value="<?php if(isset($isbn)){echo $isbn;}?>" required></br>
+					<input type="text" name="isbn" maxlength="17" pattern="[0-9\-]+[0-9]$" title="Alphabet and special character are not accepted" value="<?php if(isset($isbn)){echo $isbn;}?>" required></br>
 					
 					<label>Book Description:</label></br>
 					<textarea name="description" rows="5" cols="50" minlength="6" required><?php if(isset($description)){echo $description;}?></textarea></br>
