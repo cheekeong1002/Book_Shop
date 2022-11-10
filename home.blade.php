@@ -84,7 +84,7 @@
                 <img src="data:image/jpg;charset=utf8;base64,{{ $data[0]->frontCover }}" alt="Front Cover" height=300 width=210>
               </div>
               <div class="container">
-
+              
                 @if ($data[0]->quantity  <= 0)
                   <p class="book-information" style="color: red;">Book Title:</br><b>{{ $data[0]->bookName }}</b></br></br></p>
                   <center><b><p style="color: red; font-size: 17px;">Out of Stock!</p></b></center>
@@ -164,9 +164,7 @@
                   @if (session()->has('LoggedUser'))
                     <a href="/addToCart3" class="add_to_cart">Add to Cart</a>
                   @endif
-
                 @endif
-
               </div>
             @else
               <div class="polaroid">
@@ -201,7 +199,6 @@
                   @if (session()->has('LoggedUser'))
                     <a href="/addToCart4" class="add_to_cart">Add to Cart</a>
                   @endif
-
                 @endif
 
               </div>
@@ -228,19 +225,15 @@
                 <img src="data:image/jpg;charset=utf8;base64,{{ $data[4]->frontCover }}" alt="Front Cover" height=300 width=210>
               </div>
               <div class="container">
-
                 @if ($data[4]->quantity  <= 0)
                   <p class="book-information" style="color: red;">Book Title:</br><b>{{ $data[4]->bookName }}</b></br></br></p>
                   <center><b><p style="color: red; font-size: 17px;">Out of Stock!</p></b></center>
                 @else
-
                   <p class="book-information">Book Title:</br><b>{{ $data[4]->bookName }}</b></br></br>
                   @if (session()->has('LoggedUser'))
                     <a href="/addToCart5" class="add_to_cart">Add to Cart</a>
                   @endif
-
                 @endif
-
               </div>
             @else
               <div class="polaroid">
