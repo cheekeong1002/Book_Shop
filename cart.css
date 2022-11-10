@@ -1,0 +1,25 @@
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto !important;
+    float: none !important;
+}
+
+th{
+    width: 300px;
+    padding: 10px;
+}
+
+td{
+    height:200px;
+    text-align: center;
+}
+
+.font-black{
+    color: black !important;
+}
+
+.font-red{
+    color: red !important;
+}
+
