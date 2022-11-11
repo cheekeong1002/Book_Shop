@@ -34,8 +34,12 @@
   <div class="row">   
     <div class="button-container"> 
       <div class="left">
-        <form action="" class="searchbar" method="get" style="margin-top:auto; margin-bottom:auto;">
-            <input type="text" name="search" placeholder="Search something..." required>
+        <form action="/searchBook" class="searchbar" method="get" style="margin-top:auto; margin-bottom:auto;">
+            @if (session()->has('bookSearched'))
+              <input type="text" name="bookName" placeholder="Search something..." value="{{ session()->get('bookSearched') }}" required>
+            @else
+              <input type="text" name="bookName" placeholder="Search something..." required>
+            @endif
             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i>
 					  <input type = "hidden" name = "submitted" value = "true">
         </form>
@@ -84,7 +88,6 @@
                 <img src="data:image/jpg;charset=utf8;base64,{{ $data[0]->frontCover }}" alt="Front Cover" height=300 width=210>
               </div>
               <div class="container">
-              
                 @if ($data[0]->quantity  <= 0)
                   <p class="book-information" style="color: red;">Book Title:</br><b>{{ $data[0]->bookName }}</b></br></br></p>
                   <center><b><p style="color: red; font-size: 17px;">Out of Stock!</p></b></center>
@@ -119,7 +122,6 @@
                 <img src="data:image/jpg;charset=utf8;base64,{{ $data[1]->frontCover }}" alt="Front Cover" height=300 width=210>
               </div>
               <div class="container">
-
                 @if ($data[1]->quantity  <= 0)
                   <p class="book-information" style="color: red;">Book Title:</br><b>{{ $data[1]->bookName }}</b></br></br></p>
                   <center><b><p style="color: red; font-size: 17px;">Out of Stock!</p></b></center>
@@ -129,7 +131,6 @@
                     <a href="/addToCart2" class="add_to_cart">Add to Cart</a>
                   @endif
                 @endif
-
               </div>
             @else
               <div class="polaroid">
@@ -154,12 +155,10 @@
                 <img src="data:image/jpg;charset=utf8;base64,{{ $data[2]->frontCover }}" alt="Front Cover" height=300 width=210>
               </div>
               <div class="container">
-
                 @if ($data[2]->quantity  <= 0)
                   <p class="book-information" style="color: red;">Book Title:</br><b>{{ $data[2]->bookName }}</b></br></br></p>
                   <center><b><p style="color: red; font-size: 17px;">Out of Stock!</p></b></center>
                 @else
-
                   <p class="book-information">Book Title:</br><b>{{ $data[2]->bookName }}</b></br></br>
                   @if (session()->has('LoggedUser'))
                     <a href="/addToCart3" class="add_to_cart">Add to Cart</a>
@@ -189,18 +188,15 @@
                 <img src="data:image/jpg;charset=utf8;base64,{{ $data[3]->frontCover }}" alt="Front Cover" height=300 width=210>
               </div>
               <div class="container">
-
                 @if ($data[3]->quantity  <= 0)
                   <p class="book-information" style="color: red;">Book Title:</br><b>{{ $data[3]->bookName }}</b></br></br></p>
                   <center><b><p style="color: red; font-size: 17px;">Out of Stock!</p></b></center>
                 @else
-
                   <p class="book-information">Book Title:</br><b>{{ $data[3]->bookName }}</b></br></br>
                   @if (session()->has('LoggedUser'))
                     <a href="/addToCart4" class="add_to_cart">Add to Cart</a>
                   @endif
                 @endif
-
               </div>
             @else
               <div class="polaroid">
