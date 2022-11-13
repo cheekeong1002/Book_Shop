@@ -12,7 +12,6 @@
 
 </head>
 
-
 <body>
     @include('header')
     @if (Session::get('success'))
